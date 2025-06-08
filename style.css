@@ -1,0 +1,386 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+/* Tela de abertura estilo Netflix */
+#intro {
+  position: fixed;
+  z-index: 9999;
+  background: black;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeOut 2s ease-out 2.5s forwards;
+}
+
+#intro-logo {
+  width: 150px;
+  opacity: 0;
+  animation: logoFadeIn 1.5s ease-in forwards;
+}
+
+@keyframes logoFadeIn {
+  to {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --light: #0f3122;
+    --color-text: #d6f1e4;
+    --box-shadow:
+        5px 5px 15px #133e2d,
+        -5px -5px 15px #2c8b65;
+    --gradient-bg: linear-gradient(-45deg, #0f3122, #26684e);
+}
+
+a {
+    color: #d6f1e4;
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    background-color: var(--light);
+    color: var(--color-text);
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+}
+
+
+
+header .logo img {
+    height: 50px;
+    margin-bottom: 40px;
+}
+
+header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column; /* menu vertical */
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    gap: 20px;
+    width: 100%;
+}
+
+header ul li {
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+}
+
+header ul li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    font-size: 18px;
+    color: var(--color-text);
+    transition: color 0.3s;
+}
+
+header ul li a:hover {
+    color: #ffffff;
+}
+
+.container {
+    margin-left: 100px; /* espaço para menu lateral */
+    max-width: calc(100% - 100px);
+    padding: 20px;
+}
+
+.banner {
+    margin-top: 50px; /* diminui o topo, já que header lateral */
+    display: grid;
+    grid-template-columns: 60% 40%;
+    border-bottom: 1px solid #2c8b65;
+    padding-bottom: 50px;
+}
+
+.banner .content {
+    text-align: justify;
+    padding-right: 50px;
+}
+
+.banner .content h1 {
+    font-size: 4.5em;
+    margin: 0;
+}
+
+.gradientText {
+    display: inline-block;
+    background: var(--gradient-bg);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.job {
+    display: inline-block;
+}
+
+.job::before {
+    content: attr(data-job1);
+    overflow: hidden;
+    display: inline-flex;
+    white-space: nowrap;
+    animation: effectText 5s steps(40) infinite alternate,
+               changeText 10s linear infinite;
+}
+
+@keyframes effectText {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes changeText {
+    from {
+        content: attr(data-job1);
+    }
+    to {
+        content: attr(data-job2);
+    }
+}
+
+.find {
+    margin-top: 50px;
+}
+
+.find ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+.find ul li {
+    width: 50px;
+    height: 50px;
+    box-shadow: var(--box-shadow);
+    margin: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.find ul li:hover {
+    color: #ffffff;
+    background-image: var(--gradient-bg);
+}
+
+.banner .avatar {
+    position: relative;
+    height: max-content;
+    text-align: center;
+}
+
+.banner .avatar::before {
+    position: absolute;
+    width: 90%;
+    height: 80%;
+    content: '';
+    z-index: -1;
+    bottom: 0;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.banner img {
+    width: 90%;
+}
+
+header .navDiv,
+header .nav label,
+header input {
+    display: none;
+}
+
+.title {
+    text-align: center;
+    padding-top: 100px;
+}
+
+.listSkill {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 20px;
+    border-bottom: 1px solid #2c8b65;
+    padding-bottom: 50px;
+}
+
+.listSkill .evaluate {
+    width: 100%;
+    height: 20px;
+    box-shadow: var(--box-shadow);
+    border-radius: 10px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.listSkill .evaluate::before {
+    position: absolute;
+    height: 100%;
+    width: var(--point);
+    background-image: var(--gradient-bg);
+    content: '';
+    border-radius: 10px;
+}
+
+.listProject {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    border-bottom: 1px solid #2c8b65;
+    padding-bottom: 50px;
+}
+
+.listProject .item {
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: large;
+}
+
+.listProject .item img {
+    width: 90%;
+    border-radius: 20px;
+}
+
+.contact {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.contact li {
+    width: 50px;
+    height: 50px;
+    margin: 20px;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+.contact li:hover {
+    background-image: var(--gradient-bg);
+    color: #ffffff;
+}
+
+/* Desktops and laptops ----------- */
+@media screen and (min-width: 1224px) {
+    /* Estilos específicos para desktop, se precisar */
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (max-width: 1024px) {
+    .banner {
+        grid-template-columns: 40% 60%;
+    }
+
+    .banner .content h1 {
+        font-size: 2em;
+    }
+
+    .listProject {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* mobile */
+@media screen and (max-width: 767px) {
+
+
+    .container {
+        margin-left: 0;
+        margin-top: 60px; /* espaço para header móvel */
+        max-width: 100%;
+    }
+
+    .banner {
+        margin-top: 0;
+        grid-template-columns: 1fr;
+    }
+
+    .banner .content h1 {
+        font-size: 1.5em;
+    }
+
+    .listSkill {
+        grid-template-columns: 1fr;
+    }
+
+    .listProject {
+        grid-template-columns: 1fr;
+    }
+}
+
+.job {
+    display: inline-block;
+    font-weight: bold;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: inherit;
+    vertical-align: bottom;
+}
+
+.job span {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #d6f1e4;
+    animation: blinkCursor 0.7s steps(1) infinite;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: inherit;
+    vertical-align: bottom;
+}
+
+@keyframes blinkCursor {
+    50% {
+        border-color: transparent;
+    }
+}
+footer {
+  text-align: center;
+  padding: 15px 10px;
+  color: #fff;
+  background-color: #123;
+  font-size: 0.875rem;
+  border-top: 1px solid #444;
+  box-sizing: border-box;
+  width: 100%;
+}
