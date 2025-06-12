@@ -384,3 +384,18 @@ footer {
   box-sizing: border-box;
   width: 100%;
 }
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+.banner .avatar img {
+  width: 90%;
+  animation: float 3s ease-in-out infinite;
+}
