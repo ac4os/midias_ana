@@ -353,8 +353,8 @@ header input {
     font-weight: bold;
     font-size: inherit;
     font-family: inherit;
-    line-height: inherit;
-    vertical-align: bottom;
+    line-height: 1.2; /* ou ajuste fino como 1.1 */
+    vertical-align: middle; /* corrigido */
 }
 
 .job span {
@@ -365,9 +365,10 @@ header input {
     animation: blinkCursor 0.7s steps(1) infinite;
     font-size: inherit;
     font-family: inherit;
-    line-height: inherit;
-    vertical-align: bottom;
+    line-height: 1.2; /* ajuste adicional */
+    vertical-align: middle; /* corrigido */
 }
+
 
 @keyframes blinkCursor {
     50% {
