@@ -126,7 +126,9 @@ header ul li a:hover {
 .banner .content h1 {
     font-size: 4.5em;
     margin: 0;
+    text-align: left; /* Corrige o espaçamento */
 }
+
 
 .gradientText {
     display: inline-block;
