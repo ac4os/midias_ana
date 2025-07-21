@@ -270,6 +270,7 @@ header input {
     padding-bottom: 50px;
 }
 
+/* Modificações para o alinhamento dos nomes */
 .listProject .item {
     text-align: center;
     box-shadow: var(--box-shadow);
@@ -277,12 +278,40 @@ header input {
     border-radius: 10px;
     font-weight: bold;
     font-size: large;
+    /* Adições para alinhar o conteúdo verticalmente dentro do item */
+    display: flex; /* Transforma o item em um contêiner flexível */
+    flex-direction: column; /* Empilha os filhos (o 'a') verticalmente */
+    justify-content: space-between; /* Distribui o espaço entre a imagem e o nome, empurrando o nome para baixo */
+    height: 100%; /* Garante que o item ocupe a altura total da célula da grade */
+}
+
+.listProject .item a {
+    display: flex; /* Transforma o link em um contêiner flexível */
+    flex-direction: column; /* Empilha a imagem e o nome verticalmente */
+    align-items: center; /* Centraliza a imagem e o nome horizontalmente dentro do link */
+    height: 100%; /* Crucial: faz com que o link ocupe toda a altura do .item */
 }
 
 .listProject .item img {
     width: 90%;
     border-radius: 20px;
+    margin-bottom: 10px; /* Espaçamento entre a imagem e o nome */
 }
+
+.listProject .item .name {
+    text-align: center;
+    /* Ajuste de min-height para garantir espaço para 2 linhas se o texto for longo */
+    min-height: 2.5em; /* Equivalente a cerca de 50px para uma fonte de 20px (20px * 2.5 = 50px) */
+    padding: 0 5px;
+    box-sizing: border-box;
+    display: block; /* Garante que 'text-align: center' funcione corretamente */
+    flex-grow: 1; /* Permite que o nome ocupe o espaço restante se o display: flex for usado no pai (.item a) */
+    /* Garante que o texto em uma linha esteja verticalmente centralizado dentro do min-height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 .contact {
     padding: 0;
